@@ -195,22 +195,33 @@ const students = {
 
 console.log(students)
 
-const student1 = new Student(students.student1.id, students.student1.name, students.student1.email, students.student1.marks)
-const student2 = new Student(students.student2.id, students.student2.name, students.student2.email, students.student2.marks)
-const student3 = new Student(students.student3.id, students.student3.name, students.student3.email, students.student3.marks)
-const student4 = new Student(students.student4.id, students.student4.name, students.student4.email, students.student4.marks)
-const student5 = new Student(students.student5.id, students.student5.name, students.student5.email, students.student5.marks)
+for(index in students) {
+    const student = new Student(students[index].id, students[index].name, students[index].email, students[index].marks)
 
-const studentLists = {
-    student1,
-    student2,
-    student3,
-    student4,
-    student5
+    const studentList = { student }
+
+    for(index in studentList) {
+        const std = studentList[index]
+        results.innerHTML += std.getStudentData()
+    }
 }
 
-for(index in studentLists) {
-    const student = studentLists[index]
+// const student1 = new Student(students.student1.id, students.student1.name, students.student1.email, students.student1.marks)
+// const student2 = new Student(students.student2.id, students.student2.name, students.student2.email, students.student2.marks)
+// const student3 = new Student(students.student3.id, students.student3.name, students.student3.email, students.student3.marks)
+// const student4 = new Student(students.student4.id, students.student4.name, students.student4.email, students.student4.marks)
+// const student5 = new Student(students.student5.id, students.student5.name, students.student5.email, students.student5.marks)
 
-    results.innerHTML += student.getStudentData()
-}
+// const studentLists = {
+//     student1,
+//     student2,
+//     student3,
+//     student4,
+//     student5
+// }
+
+// for(index in studentLists) {
+//     const student = studentLists[index]
+
+//     results.innerHTML += student.getStudentData()
+// }

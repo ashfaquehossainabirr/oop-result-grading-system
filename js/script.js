@@ -9,154 +9,168 @@ class Student {
     }
 
     getStudentData() {
-        if(this.marks > 40 && this.marks < 49) {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
+        if(this.marks < 0 || this.marks > 100 || isNaN(this.marks)) {
+            console.error("Invalid Marks. Please check student info list.")
+                return `
+                            <p style="margin-top: 20px;">
+                                <p style="color: red; font-weight: 700;">
+                                    Student ID-${this.id}
+                                </p>
+                                <p style="color: red; font-weight: 700;">
+                                    Invalid Marks. Please check student info list.
+                                </p>
                             </p>
-                            <p>
-                                Name: <b>${this.name}</b>
-                            </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="passed">(Grade: E)</span>
-                            </p>
-                            <p>
-                                Student Contact Info: ${this.email}
-                            </p>
-                            <p>
-                                Result: This student is passed.
-                            </p>
-                        </p>
-                    `
-        } else if(this.marks > 50 && this.marks < 59) {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
-                            </p>
-                            <p>
-                                Name: <b>${this.name}</b>
-                            </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="passed">(Grade: D)</span>
-                            </p>
-                            <p>
-                                Student Contact Info: ${this.email}
-                            </p>
-                            <p>
-                                Result: This student is passed.
-                            </p>
-                        </p>
-                    `
-        } else if(this.marks > 60 && this.marks < 69) {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
-                            </p>
-                            <p>
-                                Name: <b>${this.name}</b>
-                            </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="passed">(Grade: C)</span>
-                            </p>
-                            <p>
-                                Student Contact Info: ${this.email}
-                            </p>
-                            <p>
-                                Result: This student is passed.
-                            </p>
-                        </p>
-                    `
-        } else if(this.marks > 70 && this.marks < 79) {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
-                            </p>
-                            <p>
-                                Name: <b>${this.name}</b>
-                            </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="passed">(Grade: B)</span>
-                            </p>
-                            <p>
-                                Student Contact Info: ${this.email}
-                            </p>
-                            <p>
-                                Result: This student is passed.
-                            </p>
-                        </p>
-                    `
-        } else if(this.marks > 80 && this.marks < 89) {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
-                            </p>
-                            <p>
-                                Name: <b>${this.name}</b>
-                            </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="passed">(Grade: A)</span>
-                            </p>
-                            <p>
-                                Student Contact Info: ${this.email}
-                            </p>
-                            <p>
-                                Result: This student is passed.
-                            </p>
-                        </p>
-                    `
-        } else if(this.marks > 90 && this.marks < 100) {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
-                            </p>
-                            <p>
-                                Name: <b>${this.name}</b>
-                            </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="passed">(Grade: A+)</span>
-                            </p>
-                            <p>
-                                Student Contact Info: ${this.email}
-                            </p>
-                            <p>
-                                Result: This student is passed.
-                            </p>
-                        </p>
-                    `
+                        `
         } else {
-            return `
-                        <p id="SID-${this.id}" class="student">
-                            <p>
-                                Student ID: <b>${this.id}</b>
+            if(this.marks > 40 && this.marks < 49) {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="passed">(Grade: E)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is passed.
+                                </p>
                             </p>
-                            <p>
-                                Name: <b>${this.name}</b>
+                        `
+            } else if(this.marks > 50 && this.marks < 59) {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="passed">(Grade: D)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is passed.
+                                </p>
                             </p>
-                            <p>
-                                Total mark: ${this.marks} marks 
-                                <span class="failed">(Grade: U)</span>
+                        `
+            } else if(this.marks > 60 && this.marks < 69) {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="passed">(Grade: C)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is passed.
+                                </p>
                             </p>
-                            <p>
-                                Student Contact Info: ${this.email}
+                        `
+            } else if(this.marks > 70 && this.marks < 79) {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="passed">(Grade: B)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is passed.
+                                </p>
                             </p>
-                            <p>
-                                Result: This student is Failed. Student should retake the exam.
+                        `
+            } else if(this.marks > 80 && this.marks < 89) {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="passed">(Grade: A)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is passed.
+                                </p>
                             </p>
-                        </p>
-                    `
-        }
+                        `
+            } else if(this.marks > 90 && this.marks < 100) {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="passed">(Grade: A+)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is passed.
+                                </p>
+                            </p>
+                        `
+            } else {
+                return `
+                            <p id="SID-${this.id}" class="student">
+                                <p>
+                                    Student ID: <b>${this.id}</b>
+                                </p>
+                                <p>
+                                    Name: <b>${this.name}</b>
+                                </p>
+                                <p>
+                                    Total mark: ${this.marks} marks 
+                                    <span class="failed">(Grade: U)</span>
+                                </p>
+                                <p>
+                                    Student Contact Info: ${this.email}
+                                </p>
+                                <p>
+                                    Result: This student is Failed. Student should retake the exam.
+                                </p>
+                            </p>
+                        `
+            }
+        } 
     }
 }
 
